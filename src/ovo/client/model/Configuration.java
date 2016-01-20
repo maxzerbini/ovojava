@@ -9,14 +9,22 @@ import com.google.gson.stream.JsonReader;
 
 public class Configuration {
 
-    public ArrayList<Node> ClusterNodes;
+    private ArrayList<Node> ClusterNodes;
 
     public Configuration() 
     {
-        ClusterNodes = new ArrayList<Node>();
+        setClusterNodes(new ArrayList<Node>());
     }
     
-    public static Configuration loadFromFile(String path) throws FileNotFoundException
+    public ArrayList<Node> getClusterNodes() {
+		return ClusterNodes;
+	}
+
+	public void setClusterNodes(ArrayList<Node> clusterNodes) {
+		ClusterNodes = clusterNodes;
+	}
+    
+	public static Configuration loadFromFile(String path) throws FileNotFoundException
     {
     	Gson gson = new Gson();
     	JsonReader reader;
@@ -29,5 +37,4 @@ public class Configuration {
 		}
     	
     }
-    
 }

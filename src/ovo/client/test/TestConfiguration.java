@@ -20,7 +20,7 @@ public class TestConfiguration {
 	public void testLoadFromFile() {
 		try {
 			_sut = Configuration.loadFromFile("config.json");
-			System.out.println(_sut.ClusterNodes.get(0).getHost());
+			System.out.println(_sut.getClusterNodes().get(0).getHost());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
